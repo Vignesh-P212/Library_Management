@@ -1,4 +1,4 @@
-import Notify from "../../models/notify.js";
+import Notification from "../../models/notification.js";
 export const markNotificationAsRead = async (req, res) => {
   try {
     const notificationId = req.params.id;

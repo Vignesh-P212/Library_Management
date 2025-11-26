@@ -1,4 +1,4 @@
-import Notification from "../models/notification.js";
+import Notification from "../../models/notification.js";
 
  const createNotification = async ({
   recipient,
@@ -34,12 +34,12 @@ import Notification from "../models/notification.js";
 export default createNotification;
 
 
-await createNotification({
-  recipient: adminId,
-  sender: req.user._id,
-  type: "Complaint",
-  title: "New Complaint Raised",
-  message: `${req.user.name} raised a new complaint: ${subject}`,
-  relatedId: complaint._id,
-  relatedModel: "Complaint",
-});
+// await createNotification({
+//   recipient: req.user._id,
+//   sender: req.user._id,
+//   type: "Complaint",
+//   title: "New Complaint Raised",
+//   message: `${req.user.name} raised a new complaint: ${subject}`,
+//   relatedId: complaint._id,
+//   relatedModel: "Complaint",
+// });
