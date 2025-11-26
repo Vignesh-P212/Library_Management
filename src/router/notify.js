@@ -1,5 +1,5 @@
 import getallnotifify from "../controller/notification/getnotification.js";
-import updatenotify from "../controller/notification/updatenotification.js";
+import {markNotificationAsRead} from "../controller/notification/updatenotification.js";
 // import updateimage from "../controller/signup/image.js";
 
 
@@ -8,7 +8,7 @@ import protect from "../utils/authmiddleware.js";
  const router=express.Router();
 
  router.get("/getnotify",getallnotifify);
- router.put("/updateseen",updatenotify);
+ router.put("/updateseen",markNotificationAsRead);
 //  router.put("/upload",updateimage);
 
 
