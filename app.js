@@ -10,7 +10,7 @@ import notify from "./src/router/notify.js";
 import books from "./src/router/booksrouter.js";
 import borrows from "./src/router/borrow.js"
 import cookieParser from "cookie-parser";
-
+const port = process.env.PORT || 5000;
 
 connection1()
 
@@ -26,8 +26,8 @@ app.use("/api/notification/v1",notify);
 app.use("/api/login/v1",session);
 app.use("/api/books/v1",books);
 app.use("/api/borrows/v1",borrows);
-app.listen(3000,()=>{
-    console.log("Server is runnning");
+app.listen(port,()=>{
+    console.log(`✅ Server is running on port ${port}`);
 })
 
 
