@@ -7,15 +7,15 @@ import recordlogin from "../sattendance/logintracker.js";
 
 const login=async(req,res) =>{
 try{
- const {email,password,role}=req.body;
+ const {email,password,data}=req.body;
 
 
-if(!email || !password||!role){
+if(!email || !password||!data){
     return res.status(400).json({sucess:false,message:"Email and Password are required"});
 }
 
 let user;
-if(role=="consumer"){
+if(data=="student"){
 
     user=await register.findOne({email:email});
 
