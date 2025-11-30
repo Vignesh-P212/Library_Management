@@ -10,12 +10,12 @@ try{
  const {email,password,role}=req.body;
 
 
-if(!email || !password||!role){
+if(!email || !password||!data){
     return res.status(400).json({sucess:false,message:"Email and Password are required"});
 }
 
 let user;
-if(role=="consumer"){
+if(data=="student"){
 
     user=await register.findOne({email:email});
 
