@@ -7,7 +7,7 @@ import recordlogin from "../sattendance/logintracker.js";
 
 const login=async(req,res) =>{
 try{
- const {email,password,role}=req.body;
+ const {email,password,data}=req.body;
 
 
 if(!email || !password||!data){
