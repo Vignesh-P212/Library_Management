@@ -8,7 +8,9 @@ import employee from "./src/router/employee.js";
 import session from "./src/router/session.js"
 import notify from "./src/router/notify.js";
 import books from "./src/router/booksrouter.js";
-import borrows from "./src/router/borrow.js"
+import borrows from "./src/router/borrow.js";
+import cors from "cors";
+
 import cookieParser from "cookie-parser";
 const port = process.env.PORT || 5000;
 
@@ -19,7 +21,12 @@ connection1()
 const app=express();
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    credentials: true,
+  })
+);
 app.use("/api/register/v1",student);
 app.use("/api/users/v1",employee);
 app.use("/api/notification/v1",notify);
