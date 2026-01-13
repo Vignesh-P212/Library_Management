@@ -41,14 +41,18 @@ if(!ismatch){
 
 recordlogin(user._id);
 //encode
-const token =jsonwebtoken.sign({userId:user.id},process.env.JWT_SECRET,{expiresIn:'1d'} );
+const refreshToken =jsonwebtoken.sign({userId:user.id},process.env.JWT_SECRET,{expiresIn:'1d'} );
 
 
-res.cookie("token",token,{
+res.cookie("token",refreshToken,{
     httpOnly:true,
     secure:process.env.NODE_ENV==="production",
     sameSite:"strict",
-    maxAge:24*60*60*1000}).status(200).json({sucess:true,message:"Login successfully"});
+    maxAge:24*60*60*1000}).status(200).json({
+      sucess:true,
+      message:"Login successfully",
+      user:user,
+      RefreshToken:refreshToken,});
 
 
 }
