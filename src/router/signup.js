@@ -10,8 +10,8 @@ import protect from "../utils/authmiddleware.js";
  export const router=express.Router();
 
  router.post("/signup",Student);
- router.get("/alluser",protect,adminEmp,getalluser);
- router.put("/updateusr/:id",protect,updateuser);
+ router.get("/alluser",protect,getalluser);
+ router.put("/updateuser/:id",protect,updateuser);
  router.delete("/deleteuser/:id",protect,deleteuser);
 
 
